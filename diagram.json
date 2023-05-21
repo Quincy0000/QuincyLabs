@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "author": "Quincy Cherrelus",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 0,
+      "left": 0,
+      "attrs": { "env": "micropython-20230426-v1.20.0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 129.27,
+      "left": -172.91,
+      "attrs": { "color": "red", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 16.84,
+      "left": -165.63,
+      "attrs": { "color": "green", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 34.74,
+      "left": 179.1,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "btn2:1.r", "pico:GP0", "green", [ "v0" ] ],
+    [ "btn2:2.r", "pico:GND.1", "black", [ "h0" ] ],
+    [ "btn1:1.r", "pico:GP10", "green", [ "v0" ] ],
+    [ "btn1:2.r", "pico:GND.4", "black", [ "h0" ] ],
+    [ "lcd1:GND", "pico:GND.8", "black", [ "h0" ] ],
+    [ "lcd1:VCC", "pico:3V3", "red", [ "h0" ] ],
+    [ "lcd1:SDA", "pico:GP20", "green", [ "h-51.15", "v87.32", "h-1.04", "v0" ] ],
+    [ "lcd1:SCL", "pico:GP21", "green", [ "h-36.58", "v35.14" ] ]
+  ],
+  "dependencies": {}
+}
